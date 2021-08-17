@@ -1,8 +1,12 @@
-# Grafana Panel Plugin Template
+# Grafana Direction Panel Plugin
 
-[![Build](https://github.com/grafana/grafana-starter-panel/workflows/CI/badge.svg)](https://github.com/grafana/grafana-starter-panel/actions?query=workflow%3A%22CI%22)
+[![Build](https://github.com/LukasPatzke/grafana-direction-panel/workflows/CI/badge.svg)](https://github.com/LukasPatzke/grafana-direction-panel/actions?query=workflow%3A%22CI%22)
 
-This template is a starting point for building Grafana Panel Plugins in Grafana 7.0+
+This is a Grafana Panel Plugin to display directions in Grafana 7.0+
+
+<p align="middle">
+    <img src='./src/img/screenshot.png'/>
+</p>
 
 ## What is Grafana Panel Plugin?
 

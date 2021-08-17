@@ -1,22 +1,35 @@
 {
-  "name": "simple-panel",
+  "name": "lukaspatzke-direction-panel",
   "version": "1.0.0",
-  "description": "Grafana Panel Plugin Template",
+  "description": "Displays a direction from 0 to 360",
   "scripts": {
     "build": "grafana-toolkit plugin:build",
     "test": "grafana-toolkit plugin:test",
     "dev": "grafana-toolkit plugin:dev",
     "watch": "grafana-toolkit plugin:dev --watch",
     "sign": "grafana-toolkit plugin:sign",
-    "start": "yarn watch"
+    "start": "yarn watch",
+    "grafana:watch": "nodemon",
+    "grafana:rm": "docker stop grafana-direction-panel  && docker rm grafana-direction-panel"
   },
-  "author": "Grafana Labs",
+  "author": "Lukas Patzke",
   "license": "Apache-2.0",
   "devDependencies": {
     "@grafana/data": "latest",
     "@grafana/toolkit": "latest",
     "@grafana/ui": "latest",
-    "emotion": "10.0.27"
+    "emotion": "10.0.27",
+    "nodemon": "^2.0.12"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ext": "ts,tsx",
+    "events": {
+      "start": "./start_docker_dev.sh",
+      "restart": "docker restart grafana-direction-panel"
+    }
   },
   "engines": {
     "node": ">=14"

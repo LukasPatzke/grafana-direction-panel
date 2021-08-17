@@ -1,28 +1,35 @@
 {
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/master/docs/sources/developers/plugins/plugin.schema.json",
   "type": "panel",
-  "name": "Grafana Panel Plugin Template",
-  "id": "myorgid-simple-panel",
-
+  "name": "Direction",
+  "id": "lukaspatzke-direction-panel",
   "info": {
-    "description": "Grafana Panel Plugin Template",
+    "description": "Displays a direction from 0 to 360",
     "author": {
-      "name": "Your Name"
+      "name": "Lukas Patzke"
     },
-    "keywords": ["panel", "template"],
+    "keywords": [
+      "panel",
+      "template"
+    ],
     "logos": {
       "small": "img/logo.svg",
       "large": "img/logo.svg"
     },
     "links": [
-      {"name": "Website", "url": "https://github.com/grafana/grafana-starter-panel"},
-      {"name": "License", "url": "https://github.com/grafana/grafana-starter-panel/blob/master/LICENSE"}
+      {
+        "name": "Website",
+        "url": "https://github.com/LukasPatzke/grafana-direction-panel"
+      },
+      {
+        "name": "License",
+        "url": "https://github.com/LukasPatzke/grafana-direction-panel/blob/master/LICENSE"
+      }
     ],
     "screenshots": [],
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
-
   "dependencies": {
     "grafanaDependency": ">=7.0.0",
     "plugins": []

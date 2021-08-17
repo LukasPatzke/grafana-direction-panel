@@ -1,7 +1,10 @@
-type SeriesSize = 'sm' | 'md' | 'lg';
-
-export interface SimpleOptions {
-  text: string;
-  showSeriesCount: boolean;
-  seriesCountSize: SeriesSize;
+export interface DirectionOptions {
+  directionField: string;
+  showValue: boolean;
+  valueField: string;
+  transitionDuration: number;
+  maxValue: number;
+  tickCount: number;
+  tickLength: number;
+  tickWidth: number;
 }

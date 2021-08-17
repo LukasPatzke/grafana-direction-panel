@@ -1,40 +1,55 @@
 import { PanelPlugin } from '@grafana/data';
-import { SimpleOptions } from './types';
-import { SimplePanel } from './SimplePanel';
+import { DirectionOptions } from './types';
+import { DirectionPanel } from './DirectionPanel';
+import { FieldSelector } from 'FieldSelector';
 
-export const plugin = new PanelPlugin<SimpleOptions>(SimplePanel).setPanelOptions(builder => {
+export const plugin = new PanelPlugin<DirectionOptions>(DirectionPanel).useFieldConfig().setPanelOptions(builder => {
   return builder
-    .addTextInput({
-      path: 'text',
-      name: 'Simple text option',
-      description: 'Description of panel option',
-      defaultValue: 'Default value of text input option',
+    .addCustomEditor({
+      id: 'directionField',
+      path: 'directionField',
+      name: 'Direction Field',
+      description: 'Select the field that should be displayed as a direction',
+      editor: FieldSelector
     })
     .addBooleanSwitch({
-      path: 'showSeriesCount',
-      name: 'Show series counter',
-      defaultValue: false,
+      path: 'showValue',
+      name: 'Show value',
+      defaultValue: true,
     })
-    .addRadio({
-      path: 'seriesCountSize',
-      defaultValue: 'sm',
-      name: 'Series counter size',
-      settings: {
-        options: [
-          {
-            value: 'sm',
-            label: 'Small',
-          },
-          {
-            value: 'md',
-            label: 'Medium',
-          },
-          {
-            value: 'lg',
-            label: 'Large',
-          },
-        ],
-      },
-      showIf: config => config.showSeriesCount,
-    });
+    .addCustomEditor({
+      id: 'valueField',
+      path: 'valueField',
+      name: 'Value Field',
+      description: 'Select the field that should be displayed as a value',
+      editor: FieldSelector,
+      showIf: config => config.showValue,
+    })
+    .addNumberInput({
+      path: 'transitionDuration',
+      name: 'Transition Duration',
+      description: 'In Seconds, set to 0 to disable transition animations.',
+      defaultValue: 0.5
+    })
+    .addNumberInput({
+      path: 'maxValue',
+      name: 'Maximum Value',
+      description: 'Set to the value of a complete rotation.',
+      defaultValue: 360
+    })
+    .addNumberInput({
+      path: 'tickCount',
+      name: 'Number of ticks',
+      defaultValue: 2 ** 7
+    })
+    .addNumberInput({
+      path: 'tickLength',
+      name: 'Lenght of the ticks',
+      defaultValue: 10
+    })
+    .addNumberInput({
+      path: 'tickWidth',
+      name: 'Width of the ticks',
+      defaultValue: 1
+    })
 });
