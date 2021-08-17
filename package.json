@@ -1,6 +1,6 @@
 {
   "name": "lukaspatzke-direction-panel",
-  "version": "1.0.2",
+  "version": "1.0.0",
   "description": "Displays a direction from 0 to 360",
   "scripts": {
     "build": "grafana-toolkit plugin:build",
