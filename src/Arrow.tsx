@@ -40,7 +40,7 @@ export const Arrow: React.FC<ArrowProps> = props => {
     }
     newRotation += props.rotation - apparentRot;
     setRotation(newRotation);
-  }, [props.rotation]);
+  }, [props.rotation, rotation]);
 
   return (
     <path

@@ -10,7 +10,7 @@ export const plugin = new PanelPlugin<DirectionOptions>(DirectionPanel).useField
       path: 'directionField',
       name: 'Direction Field',
       description: 'Select the field that should be displayed as a direction',
-      editor: FieldSelector
+      editor: FieldSelector,
     })
     .addBooleanSwitch({
       path: 'showValue',
@@ -29,27 +29,27 @@ export const plugin = new PanelPlugin<DirectionOptions>(DirectionPanel).useField
       path: 'transitionDuration',
       name: 'Transition Duration',
       description: 'In Seconds, set to 0 to disable transition animations.',
-      defaultValue: 0.5
+      defaultValue: 0.5,
     })
     .addNumberInput({
       path: 'maxValue',
       name: 'Maximum Value',
       description: 'Set to the value of a complete rotation.',
-      defaultValue: 360
+      defaultValue: 360,
     })
     .addNumberInput({
       path: 'tickCount',
       name: 'Number of ticks',
-      defaultValue: 2 ** 7
+      defaultValue: 2 ** 7,
     })
     .addNumberInput({
       path: 'tickLength',
       name: 'Lenght of the ticks',
-      defaultValue: 10
+      defaultValue: 10,
     })
     .addNumberInput({
       path: 'tickWidth',
       name: 'Width of the ticks',
-      defaultValue: 1
-    })
+      defaultValue: 1,
+    });
 });

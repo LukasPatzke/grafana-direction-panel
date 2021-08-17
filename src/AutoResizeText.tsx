@@ -21,7 +21,7 @@ export const AutoResizeText: React.FC<AutoResizeTextProps> = ({ size, style, chi
       var heightTransform = size / bb.height;
       setTextSize({ width: widthTransform, height: heightTransform });
     }
-  }, [text.current, size, children]);
+  }, [size, children]);
 
   return (
     <text

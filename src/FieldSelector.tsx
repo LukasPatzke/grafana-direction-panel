@@ -2,8 +2,8 @@ import React from 'react';
 import { SelectableValue, StandardEditorProps } from '@grafana/data';
 import { Select } from '@grafana/ui';
 
-export const FieldSelector: React.FC<StandardEditorProps<string>> = ({ item, value, onChange, context }) => {
-  const options: SelectableValue<string>[] = [];
+export const FieldSelector: React.FC<StandardEditorProps<string>> = ({ value, onChange, context }) => {
+  const options: Array<SelectableValue<string>> = [];
 
   if (context.data) {
     const frames = context.data;
